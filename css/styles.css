@@ -71,6 +71,19 @@ a {
     background-color: transparent;
 }
 
+
+/**
+ * Remove link styling
+ */
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -471,7 +484,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(to right, rgba(64, 127, 196, 0.9), rgba(102, 112, 197, 0.6)), url('../img/salzburg-big.jpg');
+    background: linear-gradient(to right, rgba(64, 127, 196, 0.9), rgba(102, 112, 197, 0.8)), url('../img/salzburg-big.jpg');
     background-size: cover;
     background-position: center;
 
@@ -593,19 +606,6 @@ body {
     margin-bottom: -10px;
 }
 
-.speakers__icon {
-    height: 25px;
-    width: 25px;
-    padding-top: 40px;
-}
-
-.speakers__desc {
-    max-width: 50%;
-    margin: 0 auto;
-    padding-bottom: 30px;
-    font-weight: 300;
-}
-
 .speakers-list {
     list-style: none;
     max-width: 70%;
@@ -641,6 +641,7 @@ body {
 }
 
 .agenda {
+    padding: 10px 0;
     background: #7F7FD5;
     background: linear-gradient(to left, #91EAE4, #86A8E7, rgb(141, 141, 219));
 
@@ -649,143 +650,26 @@ body {
     backdrop-filter: blur(4px);
 }
 
-.agenda-items {
-    padding: 40px 0;
+.agenda-items {    
     max-width: 60%;
     margin: 0 auto;
-    display: grid;
-    /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-    grid-auto-rows: 1fr;
-    grid-gap: 30px;
-    align-items: center;
-    justify-content: space-evenly;
-    height: inherit;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
 }
 
-.agenda-item-ds {
-    display: grid;
-    color: #FFF;
-    grid-template-columns: 1fr 2fr;
-    grid-auto-rows: 1fr;
-    background: linear-gradient(to right, rgba(64, 127, 196, 0.9), rgba(102, 112, 197, 0.9)), 
-    url("../../assets/images/conf-smaller.jpg");
-    background-size: cover;
-}
-
-.agenda-item-ds__date {
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
+.agenda-item {
+    flex-grow:1;
+    background-color: #FFF;
+    padding: 20px;
+    margin: 30px;
+    max-width:300px;
     text-align: center;
-    padding: 0 15px;
-    background: #115A90;
-}
-
-.agenda-item-ds__date__day {
-    font-size: 4rem;
-}
-
-.agenda-item-ds__date__year {
-    padding: 5px 0;
-}
-
-.agenda-item-ds-speakers {
-    margin: 0px;
-    padding: 0px;
-    background-size: cover;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.agenda-item-ds-speakers__speaker {
-    list-style: none;
-    padding: 5px 0;
 }
 
 .agenda-item__details {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    background-color: #FFF;
-    text-transform: uppercase;
-}
-
-.agenda-item__details__tt {
-    
-    color: #232b2b;
-}
-
-.agenda-item__details__tt > span {
-    display: block;
-}
-
-.agenda-item__details__tt__title {
-    font-family: 'Bree Serif', serif;
-    font-size: 1.5rem;
-    padding: 0 15px;
-}
-
-.agenda-item__details__tt__time {
-    font-size: 1.1rem;
-    padding: 5px 15px;
-}
-
-.agenda-item__details__price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    color: #FFF;
-    background: #115A90;
-
-}
-
-.faq__item {
-    max-width: 70%;
-    margin: 0 auto;
-    
-}
-
-.faq__item__que {
-    display: block;
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    border: none;
-    outline: none;
-    transition: 0.4s; 
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.faq__item__que:hover {
-    background-color: #ccc;
-}
-
-.faq__item__ans {
-    padding: 0 18px;
-    overflow: hidden;
-    text-align: center;
-    display:none;
-    max-width: 50%;
-    margin: 20px auto;
-    height: auto;
-    -webkit-animation: fade-in .3s ease-in;
-    animation: fade-in .3s ease-in;
-}
-
-@-webkit-keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    line-height: 1.7em;
+    text-align:left;
 }
 
 @keyframes fade-in {
