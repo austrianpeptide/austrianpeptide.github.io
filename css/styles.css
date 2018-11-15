@@ -462,7 +462,9 @@ body {
     background: linear-gradient(to right, rgba(64, 127, 196, 0.9), rgba(102, 112, 197, 0.8)), url('../img/salzburg-big.jpg');
     background-size: cover;
     background-position: center;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .banner-invite {
@@ -522,17 +524,6 @@ body {
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
-}
-
-.banner-invite__ready__que__huge:hover {
-    -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
 }
 
 .banner-invite__dl {
