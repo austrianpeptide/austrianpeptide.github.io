@@ -465,6 +465,10 @@ body {
     margin: 10px 0;
 }
 
+.site-nav-list__item>a{
+    color:white;
+}
+
 .site-nav-list__item:hover {
     text-decoration: underline;
 }
@@ -598,12 +602,13 @@ body {
     transform: scale(1.07);
 }
 
-.speakers {
+#speakers {
+    padding: 10px 0;
     text-align: center;
 }
 
 .speakers-heading {
-    margin-bottom: -10px;
+    margin-bottom: 10px;
 }
 
 .speakers-list {
@@ -667,9 +672,19 @@ body {
     text-align: center;
 }
 
+.agenda-item img {
+    max-height:130px;
+    max-width:200px;
+}
+
 .agenda-item__details {
     line-height: 1.7em;
     text-align:left;
+}
+
+#sponsors {
+    padding: 10px 0;
+    text-align:center;
 }
 
 @keyframes fade-in {
