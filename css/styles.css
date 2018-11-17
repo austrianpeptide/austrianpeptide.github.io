@@ -604,7 +604,7 @@ body {
 }
 
 .agenda-items {    
-    max-width: 60%;
+    max-width: 900px;
     margin: 0 auto;
     display:flex;
     flex-flow: row wrap;
@@ -612,6 +612,7 @@ body {
 }
 
 .agenda-item {
+    border-radius: 15px;
     flex-grow:1;
     background-color: #FFF;
     padding: 20px;
@@ -629,6 +630,19 @@ body {
 .agenda-item__details {
     line-height: 1.7em;
     text-align:left;
+}
+
+.logo {
+    max-height:100px;
+    padding:10px;
+}
+
+#logos{
+    text-align: center;
+    background-color:white;
+    max-width: 400px;
+    margin:0 auto;
+    border-radius:15px;
 }
 
 #sponsors {
