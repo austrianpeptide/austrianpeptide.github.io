@@ -12,25 +12,113 @@
 
   </head>
   <body class="text-center" id="background-picture">
-    <div class="main-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <!-- <h3 class="masthead-brand">AtPS</h3> -->
-          <!-- <nav class="nav nav-masthead justify-content-center"> -->
-          <!--   <a class="nav-link active" href="#">Home</a> -->
-          <!--   <a class="nav-link" href="info.html">Information</a> -->
-          <!-- </nav> -->
+    <div class="main-container w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead position-fixed fixed-top bg-light shadow-sm">
+        <div class="w-100 d-flex justify-content-around">
+          <div>
+            <h3 class="masthead-brand">AtPS</h3>
+          </div>
+          <div>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#speakers">Speakers</a>
+              <a class="nav-link" href="#info">Information</a>
+              <!-- <a class="nav-link" href="info.html">Information</a> -->
+            </nav>
+          </div>
         </div>
       </header>
 
-      <main role="main" class="inner main">
-        <h1 class="main-heading">Austrian Peptide Symposium</h1>
-        <p class="lead">Organized by the Austrian Peptide Community under the auspices of the European Peptide Society.</p>
-        <p class="lead">
-        </p>
-      </main>
 
-      <footer class="mastfoot mt-auto">
+      <div class="page d-flex align-items-center w-100 h-100" id="home">
+        <div>
+          <h1 class="main-heading">The 9<sup>th</sup> Austrian Peptide Symposium</h1>
+          <p class="lead">Organized by the Austrian Peptide Community under the auspices of the European Peptide Society.</p>
+          <p class="lead pt-5">5<sup>th</sup> of December 2019, Vienna </p>
+        </div>
+      </div>
+
+      <div class="page shadow-lg bg-transparent" id="speakers">
+        <h2>Speakers</h2>        
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://www2.uibk.ac.at/images/135x190/pharmazie/phtech/drugdelivery/staff/staff_images/bernkop.jpg"></div>
+            <h5 class="mt-2">Andreas Bernkop-Schnürch</h5>
+            <div>University of Innsbruck</div>
+          </div>
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://bode.ethz.ch/_jcr_content/rightpar/contextinfo/fullwidthimage_0/image.imageformat.context.1398846301.jpg"></div>
+            <h5 class="mt-2">Jeff Bode</h5>
+            <div>ETH Zürich, Switzerland</div>
+          </div>
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://www.epfl.ch/labs/lcbm/wp-content/uploads/2018/07/Fierz_photo.jpg"></div>
+            <h5 class="mt-2">Beat Fierz</h5>
+            <div>EPFL, Switzerland</div>
+          </div>
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://cdl-biosimilars.sbg.ac.at/images/team/schubert.jpg"></div>
+            <h5 class="mt-2">Mario Schubert</h5>
+            <div>University of Salzburg</div>
+          </div>
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://www.leibniz-fmp.de/fileadmin/_processed_/csm_Dorothea_cbb16f8959.jpg">
+            </div>
+            <h5 class="mt-2">Dorothea Fiedler</h5>
+            <div>FMP Berlin, Germany</div>
+          </div>
+          <div class="speaker m-4 p-2">
+            <div class="profile-pic">
+              <img src="https://www.imm.uzh.ch/contacts/imm/Research-Group-Seeger/pseeger/photo/Seeger.jpg.jpg">
+            </div>
+            <h5 class="mt-2">Markus Seeger</h5>
+            <div>University of Zürich, Schwitzerland</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page shadow-lg bg-info text-white" id="info">
+        <h2>Information</h2>        
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="p-4 text-left w-75">
+            <h5>Registration and Abstract submission will open in September!</h5>
+          <p>
+            Registration fees are €40 (regular) or €20 (Students and EPS members), respectively. These fees can be paid in cash on-site, or by credit card (after the completion of the online registration form).
+          </p>
+          </div>
+          <div class="p-4 text-left w-75">
+            <h5>Topics include:</h5>            
+            <ul>
+              <li>
+                Peptide Chemistry and Synthesis
+              </li>
+              <li>
+                Peptide Drug Development and Delivery
+              </li>
+
+              <li>
+                Peptide Structural Biology
+              </li>
+              <li>
+                Peptide Pharmacology
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page shadow-lg bg-transparent" id="sponsor">
+        <h2>Sponsors are to be announced</h2>        
+        <div class="d-block">
+        </div>
+      </div>
+      
+      <footer class="mastfoot">
         <div class="inner">
           <small>
             <p>
@@ -41,6 +129,7 @@
           </small>
         </div>
       </footer>
+
     </div>
   </body>
 </html>
