@@ -12,18 +12,9 @@ const registration = new Vue({
 
   methods: {
     async sendData() {
-      if (!this.data.fname || !this.data.lname) message.error = 'Please enter your name';
+      if (!this.fname || !this.lname) message.notify('Please enter your name', 'error');
       else {
-        let res = await axios({
-          method: 'post',
-          url: '',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          data: this.data,
-        }).catch(err => message.error = err);
-
-        if (res) message.success = "Thank you for your registration!";
+        // Send data to server
       }
     }
   },
@@ -33,7 +24,6 @@ const message = new Vue({
   el: '#vue-message',
 
   data: {
-    error: '',
     success: '',
     show: false,
   },
@@ -41,6 +31,12 @@ const message = new Vue({
   methods: {
     toggle() {
       this.show = !this.show;
-    }
+    },
+    
+    notify(message, status) {
+      console.log(message);
+      this.show = true;
+      this[status] = message;
+    },
   }
 });

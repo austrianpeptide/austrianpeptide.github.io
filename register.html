@@ -27,7 +27,7 @@
         </div>
       </header>
 
-      <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="registration">
+      <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="vue-register">
         <div class="p-5 w-75">
           <h2>Register</h2>
           <form method="POST" action="">
@@ -35,30 +35,30 @@
               <div class="d-flex justify-content-center">
                 <div class="form-group p-2">
                   <label>First name:</label>
-                  <input type="text" name="firstName" class="form-control">
+                  <input type="text" name="firstName" class="form-control" v-model="fname">
                 </div>
                 <div class="form-group p-2">
                   <label>Last name:</label>
-                  <input type="text" name="lastName" class="form-control">
+                  <input type="text" name="lastName" class="form-control" v-model="lname">
                 </div>
               </div>
               <div class="form-group d-flex flex-column align-items-center">
                 <label>Affiliation</label>
-                <textarea class="form-control w-50" name="affiliation"></textarea>
+                <textarea class="form-control w-50" name="affiliation" v-model="affil"></textarea>
               </div>
               <div class="form-group d-flex flex-column w-50 align-items-start">
                 <div class="form-group">
-                  <input type="checkbox" name="isStudent" class="form-check-input"> Student
+                  <input type="checkbox" name="isStudent" class="form-check-input" v-model="student"> Student
                 </div>
                 <div class="form-group">
-                  <input type="checkbox" name="isMember" class="form-check-input"> EPS member
+                  <input type="checkbox" name="isMember" class="form-check-input" v-model="member"> EPS member
                 </div>
                 <div class="form-group">
-                  <input type="checkbox" name="willPart" class="form-check-input"> Participate in Social Evening
+                  <input type="checkbox" name="willPart" class="form-check-input" v-model="party"> Participate in Social Evening
                 </div>
               </div>
             </fieldset>
-            <button class="btn" type="submit" value="Submit">Submit</button>
+            <button class="btn" @click.prevent="sendData">Submit</button>
           </form>
         </div>
       </div>
@@ -75,8 +75,8 @@
         </div>
       </footer>
     </div>
-    <script rel="script" src="js/vue.js"></script>
     <script rel="script" src="js/axios.js"></script>
+    <script rel="script" src="js/vue.min.js"></script>
     <script rel="script" src="js/app.js"></script>
   </body>
 </html>
