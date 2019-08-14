@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Austrian Peptide Symposium - Register</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+
+  </head>
+  <body class="text-center" id="background-picture">
+    <div class="main-container w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead position-fixed fixed-top bg-light shadow-sm">
+        <div class="w-100 d-flex justify-content-around">
+          <div>
+            <h3 class="masthead-brand">AtPS</h3>
+          </div>
+          <div>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link" href="index.html">Home</a>
+              <!-- <a class="nav-link" href="info.html">Information</a> -->
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="registration">
+        <div class="p-5 w-75">
+          <h2>Register</h2>
+          <form method="POST" action="">
+            <fieldset>
+              <div class="d-flex justify-content-center">
+                <div class="form-group p-2">
+                  <label>First name:</label>
+                  <input type="text" name="firstName" class="form-control">
+                </div>
+                <div class="form-group p-2">
+                  <label>Last name:</label>
+                  <input type="text" name="lastName" class="form-control">
+                </div>
+              </div>
+              <div class="form-group d-flex flex-column align-items-center">
+                <label>Affiliation</label>
+                <textarea class="form-control w-50" name="affiliation"></textarea>
+              </div>
+              <div class="form-group d-flex flex-column w-50 align-items-start">
+                <div class="form-group">
+                  <input type="checkbox" name="isStudent" class="form-check-input"> Student
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" name="isMember" class="form-check-input"> EPS member
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" name="willPart" class="form-check-input"> Participate in Social Evening
+                </div>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit" value="Submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+      <footer class="mastfoot">
+        <div class="inner">
+          <small>
+            <p>
+              For more information and involvement in future meetings please contact: Dr. Christian Gruber</p>
+            <p>
+              Tel.: +43-(0)1-40160-31390, Email: christian.w.gruber@meduniwien.ac.at
+            </p>
+          </small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
