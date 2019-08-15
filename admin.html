@@ -28,7 +28,7 @@
       </header>
 
       <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="vue-admin">
-        <div class="p-5 w-75">
+        <div class="p-5 w-75" v-bind:class="{ 'd-none': showitems }">
           <form>
             <fieldset>
               <div class="d-flex justify-content-center">
@@ -44,6 +44,19 @@
             </fieldset>
             <button class="btn" @click.prevent="login">Submit</button>
           </form>
+        </div>
+        <div class="p-1 w-100" v-bind:class="{ 'd-none': showlogin }">
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Affiliation</td>
+              <td>Student</td>
+              <td>EPS member</td>
+              <td>Attending afterparty</td>
+              <td>Payment</td>
+              <td>Abstract</td>
+            </tr>
+          </table>
         </div>
       </div>
       

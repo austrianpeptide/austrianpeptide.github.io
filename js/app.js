@@ -73,9 +73,11 @@ const admin = new Vue({
   el: '#vue-admin',
 
   data: {
-    items: [],
+    items: null,
     username: '',
     password: '',
+    showlogin: true,
+    showitems: false,
   },
 
   methods: {
@@ -91,7 +93,15 @@ const admin = new Vue({
           password: btoa(this.password)
         },
       }).catch(err => console.log(err));
-      if (res) console.log(res);
+      if (res) this.items = res.data;
+      this.processItems();
+    },
+
+    processItems() {
+      if (this.items !== null) {
+        this.showlogin = false;
+        this.showitems = true;
+      }
     }
   },
 });
