@@ -27,8 +27,8 @@
         </div>
       </header>
 
-      <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="vue-admin">
-        <div class="p-5 w-75" v-bind:class="{ 'd-none': showitems }">
+      <div class="page shadow-lg bg-light pb-5 d-flex justify-content-center" id="vue-admin">
+        <div class="p-5 w-100" v-bind:class="{ 'd-none': showitems }">
           <form>
             <fieldset>
               <div class="d-flex justify-content-center">
@@ -46,17 +46,31 @@
           </form>
         </div>
         <div class="p-1 w-100" v-bind:class="{ 'd-none': showlogin }">
+          <div class="d-flex align-items-center justify-content-center">
           <table>
-            <tr>
-              <td>Name</td>
-              <td>Affiliation</td>
-              <td>Student</td>
-              <td>EPS member</td>
-              <td>Attending afterparty</td>
-              <td>Payment</td>
-              <td>Abstract</td>
+            <tr class="border-bottom border-primary">
+              <td class="p-2">Name</td>
+              <td class="p-2">Affiliation</td>
+              <td class="p-2">Student</td>
+              <td class="p-2">EPS member</td>
+              <td class="p-2">Attending afterparty</td>
+              <td class="p-2">Payment</td>
+              <td class="p-2">Abstract</td>
+              <td class="p-2">Delete</td>
             </tr>
-          </table>
+            <tr v-for="item in items" class="border-bottom">
+              <td class="text-wrap">{{ item.fname }} {{ item.lname }}</td>
+              <td class="text-wrap">{{ item.affil }}</td>
+              <td>{{ item.student }}</td>
+              <td>{{ item.member }}</td>
+              <td>{{ item.party }}</td>
+              <td><span v-if="item.booked">OK</span><span v-else><button class="btn btn-sm btn-info" v-on:click="markPayment(item.id)">Mark</button>
+                </span>
+              </td>
+              <td v-if="item.abstract"><a :href="item.abstract">Download</a>
+              </td>
+            </tr>
+          </table></div>
         </div>
       </div>
       

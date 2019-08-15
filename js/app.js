@@ -73,7 +73,7 @@ const admin = new Vue({
   el: '#vue-admin',
 
   data: {
-    items: null,
+    items: [],
     username: '',
     password: '',
     showlogin: true,
@@ -93,15 +93,28 @@ const admin = new Vue({
           password: btoa(this.password)
         },
       }).catch(err => console.log(err));
-      if (res) this.items = res.data;
+      if (res) this.items = res.data.items;
       this.processItems();
     },
 
     processItems() {
-      if (this.items !== null) {
+      if (this.items) {
         this.showlogin = false;
         this.showitems = true;
       }
+    },
+
+    async markPayment(itemId) {
+      let res = await axios({
+        method: 'put',
+        url: 'http://localhost:3000/items',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: { itemId }
+      }).catch(err => console.log(err));;
+      if (res) this.items = res.data.items;
+      this.processItems();
     }
   },
 });
