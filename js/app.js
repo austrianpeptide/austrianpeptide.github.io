@@ -99,6 +99,11 @@ const admin = new Vue({
 
     processItems() {
       if (this.items) {
+        const attends = [];
+        this.items.forEach(item => {
+          if (item.attend || item.attend === undefined) attends.push(item);
+        });
+        this.items = attends;
         this.showlogin = false;
         this.showitems = true;
       }
@@ -115,6 +120,18 @@ const admin = new Vue({
       }).catch(err => console.log(err));;
       if (res) this.items = res.data.items;
       this.processItems();
-    }
+    },
+
+    async deleteItem(itemid) {
+      let res = await axios({
+        method: 'delete',
+        url: 'http://localhost:3000/items/' + itemid,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).catch(err => console.log(err));;
+      if (res) this.items = res.data.items;
+      this.processItems();
+    },
   },
 });
