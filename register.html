@@ -56,6 +56,10 @@
                 <div class="form-group">
                   <input type="checkbox" name="willPart" class="form-check-input" v-model="party"> Participate in Social Evening
                 </div>
+                <div class="form-group p-2">
+                  <label>Abstract:</label>
+                  <input type="file" id="file" ref="file" name="lastName" class="form-control" v-model="file">
+                </div>
               </div>
             </fieldset>
             <button class="btn" @click.prevent="sendData">Submit</button>
