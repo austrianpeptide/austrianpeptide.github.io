@@ -68,3 +68,30 @@ const message = new Vue({
     },
   }
 });
+
+const admin = new Vue({
+  el: '#vue-admin',
+
+  data: {
+    items: [],
+    username: '',
+    password: '',
+  },
+
+  methods: {
+    async login() {
+      let res = await axios({
+        method: 'post',
+        url: 'http://localhost:3000/signin',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          username: this.username,
+          password: btoa(this.password)
+        },
+      }).catch(err => console.log(err));
+      if (res) console.log(res);
+    }
+  },
+});
