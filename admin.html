@@ -48,7 +48,7 @@
         <div class="p-1 w-100" v-bind:class="{ 'd-none': showlogin }">
           <div class="d-flex align-items-center justify-content-center">
           <table>
-            <tr class="border-bottom border-primary">
+            <tr class="border-bottom border-primary font-weight-bold">
               <td class="p-2">Name</td>
               <td class="p-2">Affiliation</td>
               <td class="p-2">Student</td>
@@ -73,9 +73,10 @@
               <td><button class="btn btn-sm btn-danger" v-on:click="deleteItem(item.id)">x</button></td>
             </tr>
           </table></div>
+          <a :href="csvfile" download="atps2019.csv">download attendee list</a>
         </div>
       </div>
-      
+
       <footer class="mastfoot">
         <div class="inner">
         </div>

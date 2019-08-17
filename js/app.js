@@ -78,7 +78,7 @@ const admin = new Vue({
     password: '',
     showlogin: true,
     showitems: false,
-    csvfile: 'data:text/plain;charset=utf-8,hello',
+    csvfile: 'data:text/plain;charset=utf-8,\n',
   },
 
   methods: {
@@ -107,6 +107,16 @@ const admin = new Vue({
         this.items = attends;
         this.showlogin = false;
         this.showitems = true;
+        if (this.items && this.items.length) {
+          this.csvfile += Object.keys(this.items[0]).join(',');
+          this.csvfile += '\n\n';
+          this.items.forEach(item => {
+            let vals = [];
+            Object.keys(item).forEach(key => vals.push(item[key]));
+            this.csvfile += vals.join(',');
+            this.csvfile += '\n\n';
+          });
+        }
       }
     },
 
