@@ -32,7 +32,7 @@ const registration = new Vue({
         if (this.file) formdata.append('file', this.file);
         message.notify('Processing', 'warning');
         let res = await axios({
-          url: 'http://localhost:3000/items',
+          url: 'http://blue.litrev.org:3000/items',
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
@@ -78,13 +78,14 @@ const admin = new Vue({
     password: '',
     showlogin: true,
     showitems: false,
+    csvfile: 'data:text/plain;charset=utf-8,hello',
   },
 
   methods: {
     async login() {
       let res = await axios({
         method: 'post',
-        url: 'http://localhost:3000/signin',
+        url: 'http://blue.litrev.org:3000/signin',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -112,7 +113,7 @@ const admin = new Vue({
     async markPayment(itemId) {
       let res = await axios({
         method: 'put',
-        url: 'http://localhost:3000/items',
+        url: 'http://blue.litrev.org:3000/items',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -125,7 +126,7 @@ const admin = new Vue({
     async deleteItem(itemid) {
       let res = await axios({
         method: 'delete',
-        url: 'http://localhost:3000/items/' + itemid,
+        url: 'http://blue.litrev.org:3000/items/' + itemid,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -133,5 +134,6 @@ const admin = new Vue({
       if (res) this.items = res.data.items;
       this.processItems();
     },
+
   },
 });
