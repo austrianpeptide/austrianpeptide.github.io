@@ -26,7 +26,6 @@
           </div>
         </div>
       </header>
-
       <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="vue-register">
         <div class="p-5 w-75">
           <h2>Register</h2>
@@ -66,7 +65,18 @@
           </form>
         </div>
       </div>
-      
+      <div id="vue-message">
+        <div class="h-100 row align-items-center" v-bind:class="{ 'd-none': hide }" id="message-overlay">
+          <div class="mx-auto p-3 shadow bg-white rounded" id="message-box">
+            {{ message }}
+            <div v-if="payment">
+              <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://payment.meduniwien.ac.at/peptidsymposium/">To Payment</a>
+              <a class="btn" target="_blank" rel="noopener noreferrer" href="index.html">Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer class="mastfoot">
         <div class="inner">
           <small>

@@ -40,7 +40,7 @@ const registration = new Vue({
           data: formdata,
         }).catch(err => message.notify('There was a problem, please try again later', 'error'));
         message.toggle();
-        if (res) message.notify('Your registration information successfully sent to conference organizers. You will recieve a confirmation in the coming days.');
+        if (res) message.notify('Your registration information successfully sent to conference organizers. You will recieve a confirmation in the coming days.', 'success');
       }
     },
   },
@@ -52,19 +52,23 @@ const message = new Vue({
   data: {
     status: '',
     message: '',
-    show: false,
+    hide: true,
+    payment: false,
   },
 
   methods: {
     toggle() {
-      this.show = !this.show;
+      this.hide = !this.hide;
     },
     
     notify(message, status) {
-      console.log(message);
-      this.show = true;
+      console.log('notify', message);
+      this.hide = false;
       this.message = message;
       this.status = status;
+      if (status == 'error') setTimeout(() => this.toggle(), 1500);
+      if (status == 'success') this.payment = true;
+      else this.payment = false;
     },
   }
 });
