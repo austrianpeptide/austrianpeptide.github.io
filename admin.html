@@ -75,15 +75,24 @@
           </table></div>
           <!-- <a :href="csvfile" download="atps2019.csv">download attendee list</a> -->
         </div>
+        
       </div>
-
+      <div id="vue-message">
+        <div class="h-100 row align-items-center"  v-bind:class="{ 'd-none': hide }" id="message-overlay">
+          <div class="mx-auto p-3 rounded bg-white mw-75">
+            <div class="p-3">
+              {{ message }}
+            </div>
+          </div>
+        </div>
+      </div>
       <footer class="mastfoot">
         <div class="inner">
         </div>
       </footer>
     </div>
     <script rel="script" src="js/axios.js"></script>
-    <script rel="script" src="js/vue.min.js"></script>
+    <script rel="script" src="js/vue.js"></script>
     <script rel="script" src="js/app.js"></script>
   </body>
 </html>

@@ -39,9 +39,12 @@ const registration = new Vue({
           },
           data: formdata,
         }).catch(err => message.notify('There was a problem, please try again later', 'error'));
-        message.toggle();
+
         if (res) message.notify('Your registration information successfully sent to conference organizers. You will recieve a confirmation in the coming days.', 'success');
       }
+    },
+    handleFileUpload() {
+      this.file = this.$refs.file.files[0];
     },
   },
 });
@@ -97,9 +100,11 @@ const admin = new Vue({
           username: this.username,
           password: btoa(this.password)
         },
-      }).catch(err => console.log(err));
-      if (res) this.items = res.data.items;
-      this.processItems();
+      }).catch(err => message.notify('Wrong username or password', 'error'));
+      if (res) {
+        this.items = res.data.items;
+        this.processItems();
+      }
     },
 
     processItems() {
