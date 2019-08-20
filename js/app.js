@@ -32,7 +32,7 @@ const registration = new Vue({
         if (this.file) formdata.append('file', this.file);
         message.notify('Processing', 'warning');
         let res = await axios({
-          url: 'https://blue.litrev.org:3000/items',
+          url: 'https://litrev.org/atps/items',
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const admin = new Vue({
     async login() {
       let res = await axios({
         method: 'post',
-        url: 'https://blue.litrev.org:3000/signin',
+        url: 'https://litrev.org/atps/signin',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -127,7 +127,7 @@ const admin = new Vue({
     async markPayment(itemId) {
       let res = await axios({
         method: 'put',
-        url: 'https://blue.litrev.org:3000/items',
+        url: 'https://litrev.org/atps/items',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -140,7 +140,7 @@ const admin = new Vue({
     async deleteItem(itemid) {
       let res = await axios({
         method: 'delete',
-        url: 'https://blue.litrev.org:3000/items/' + itemid,
+        url: 'https://litrev.org/atps/items/' + itemid,
         headers: {
           'Content-Type': 'application/json',
         },
