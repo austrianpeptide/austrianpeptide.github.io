@@ -66,12 +66,18 @@
         </div>
       </div>
       <div id="vue-message">
-        <div class="h-100 row align-items-center" v-bind:class="{ 'd-none': hide }" id="message-overlay">
-          <div class="mx-auto p-3 shadow bg-white rounded" id="message-box">
-            {{ message }}
-            <div v-if="payment">
-              <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://payment.meduniwien.ac.at/peptidsymposium/">To Payment</a>
-              <a class="btn" target="_blank" rel="noopener noreferrer" href="index.html">Home</a>
+        <div class="h-100 row align-items-center"  v-bind:class="{ 'd-none': hide }" id="message-overlay">
+          <div class="mx-auto p-3 rounded bg-white mw-75">
+            <div class="p-3">
+              {{ message }}
+            </div>
+            <div class="flex-row">
+              <div v-if="payment">
+                <a class="btn btn-primary btn-sm m-2" target="_blank" rel="noopener noreferrer" href="https://payment.meduniwien.ac.at/peptidsymposium/">To Payment</a>
+              </div>
+              <div>
+                <a class="btn btn-primary btn-sm m-2" href="index.html">Home</a>
+              </div>
             </div>
           </div>
         </div>
