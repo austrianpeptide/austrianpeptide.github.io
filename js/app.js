@@ -23,6 +23,7 @@ const registration = new Vue({
         formdata.set('student', this.student);
         formdata.set('member', this.member);
         formdata.set('party', this.party);
+        formdata.set('presents', this.presents);
         
         try {
           this.file = this.$refs.file.files[0];
