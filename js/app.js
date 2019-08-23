@@ -9,6 +9,7 @@ const registration = new Vue({
     member: false,
     party: false,
     file: '',
+    presents: '',
   },
 
   methods: {

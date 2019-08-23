@@ -90,12 +90,10 @@ body {
     overflow: hidden;
     height: 11em;
     width: 10em;
-    border-radius: 100px;
 }
 
 .sponsor-pic {
     margin: 0 auto;
-
     width: 15em;
 }
 
