@@ -59,7 +59,8 @@
               <td class="p-2">Delete</td>
             </tr>
             <tr v-for="item in items" class="border-bottom">
-              <td class="text-wrap">{{ item.fname }} {{ item.lname }}</td>
+              <td class="text-wrap"><a :href="'mailto:'+item.email">{{ item.fname }} {{ item.lname }}</a>
+              </td>
               <td class="text-wrap">{{ item.affil }}</td>
               <td>{{ item.student }}</td>
               <td>{{ item.member }}</td>

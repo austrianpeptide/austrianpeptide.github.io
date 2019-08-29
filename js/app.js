@@ -10,11 +10,12 @@ const registration = new Vue({
     party: false,
     file: '',
     presents: '',
+    email: '',
   },
 
   methods: {
     async sendData() {
-      if (!this.fname || !this.lname) message.notify('Please enter your name', 'error');
+      if (!this.fname || !this.lname || !this.email) message.notify('Please enter your name and email', 'error');
       else {
         let formdata = new FormData();
         formdata.set('fname', this.fname);
@@ -24,6 +25,7 @@ const registration = new Vue({
         formdata.set('member', this.member);
         formdata.set('party', this.party);
         formdata.set('presents', this.presents);
+        formdata.set('email', this.email);
         
         try {
           this.file = this.$refs.file.files[0];
