@@ -89,7 +89,7 @@ const admin = new Vue({
     password: '',
     showlogin: true,
     showitems: false,
-    csvfile: 'data:text/plain;charset=utf-8,\n',
+    csvfile: '',
   },
 
   methods: {
@@ -121,13 +121,14 @@ const admin = new Vue({
         this.showlogin = false;
         this.showitems = true;
         if (this.items && this.items.length) {
-          this.csvfile += Object.keys(this.items[0]).join(',');
-          this.csvfile += '\n\n';
-          this.items.forEach(item => {
+          let row = Object.keys(this.items[0]).join(',');
+          this.csvfile += row + '\r\n';
+          this.items.forEach((item) => {
             let vals = [];
             Object.keys(item).forEach(key => vals.push(item[key]));
-            this.csvfile += vals.join(',');
-            this.csvfile += '\n\n';
+            row = vals.join(',');
+            if (row.indexOf('\r\n') !== -1) row = row.replace('\r\n', ' ');
+            this.csvfile += row + '\r\n';
           });
         }
       }
@@ -158,5 +159,28 @@ const admin = new Vue({
       this.processItems();
     },
 
+    downLoadCsv() {
+      const a = document.createElement('a');
+      let mimeType = 'text/csv;encoding:utf-8';
+      const content = this.csvfile;
+      const fileName = 'atps2019.csv';
+      mimeType = mimeType || 'application/octet-stream';
+
+      if (navigator.msSaveBlob) { // IE10
+        navigator.msSaveBlob(new Blob([content], {
+          type: mimeType
+        }), fileName);
+      } else if (URL && 'download' in a) { //html5 A[download]
+        a.href = URL.createObjectURL(new Blob([content], {
+          type: mimeType
+        }));
+        a.setAttribute('download', fileName);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
+      }
+    }
   },
 });
