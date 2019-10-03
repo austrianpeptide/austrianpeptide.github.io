@@ -96,18 +96,11 @@
       
       <div id="vue-message">
         <div class="h-100 row align-items-center"  v-bind:class="{ 'd-none': hide }" id="message-overlay">
-          <div class="mx-auto p-3 rounded bg-white mw-75">
-            <div class="p-3">
-              {{ message }}
-            </div>
-            <div class="flex-row">
-              <div v-if="payment">
-                <a class="btn btn-primary btn-sm m-2" target="_blank" rel="noopener noreferrer" href="https://payment.meduniwien.ac.at/peptidsymposium/">To Payment</a>
-              </div>
-              <div v-if="status != 'error'">
-                <a class="btn btn-primary btn-sm m-2" href="index.html">Home</a>
-              </div>
-            </div>
+          <div class="mx-auto p-3 rounded bg-white mw-75" id="message-body">
+            <noscript>
+              <meta http-equiv="refresh" content="0;url=noscript.html">
+              <a class="btn btn-primary btn-sm m-2" href="noscript.html">Register</a>              
+            </noscript>
           </div>
         </div>
       </div>
@@ -125,6 +118,23 @@
       </footer>
     </div>
     <div id="loading-overlay"></div>
+    <script>
+      document.getElementById('message-body').innerHTML = `
+      
+      <div class="p-3">
+        {{ message }}
+      </div>
+      <div class="flex-row">
+        <div v-if="payment">
+          <a class="btn btn-primary btn-sm m-2" target="_blank" rel="noopener noreferrer" href="https://payment.meduniwien.ac.at/peptidsymposium/">To Payment</a>
+        </div>
+        <div v-if="status != 'error'">
+          <a class="btn btn-primary btn-sm m-2" href="index.html">Home</a>
+        </div>
+      </div>
+
+      `;
+    </script>
     <script rel="script" src="js/axios.js"></script>
     <script rel="script" src="js/vue.js"></script>
     <script rel="script" src="js/app.js"></script>
