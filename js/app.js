@@ -89,6 +89,8 @@ const admin = new Vue({
     password: '',
     showlogin: true,
     showitems: false,
+    showList: true,
+    showPdfs: true,
   },
 
   methods: {
@@ -146,5 +148,10 @@ const admin = new Vue({
       if (res) this.items = res.data.items;
       this.processItems();
     },
+
+    downloadFile(id){
+      this[id] = false;
+      setTimeout(() => this[id] = true, 10000);
+    }
   },
 });
