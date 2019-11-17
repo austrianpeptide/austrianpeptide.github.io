@@ -70,23 +70,6 @@
                 
               </div>
               <div class="ml-3">
-                  
-                  <div class="form-group">
-                    <div>Presentation type:</div>
-                    <input type="radio" id="oral" value="Oral" v-model="presents">
-                    <label for="oral">Oral</label>
-                    <input type="radio" class="ml-3" id="poster" value="Poster" v-model="presents">
-                    <label for="poster">Poster</label>
-                    <input type="radio" class="ml-3" id="nopref" value="No preference" v-model="presents">
-                    <label for="nopref">No preference</label>
-                  </div>
-                  <div class="form-group text-left">
-                    <div class="pr-2">
-                      <label>Abstract:</label></div>
-                    <input type="file" id="file" ref="file" name="lastName" class="form-control-file" v-on:change="handleFileUpload()">
-                  </div>
-                </div>
-
               
             </fieldset>
             <button class="btn" @click.prevent="sendData">Submit</button>
