@@ -75,9 +75,9 @@
               <td><button class="btn btn-sm btn-danger" v-on:click="deleteItem(item.id)">x</button></td>
             </tr>
           </table></div>
-          <p><a href="https://litrev.org/atps/exportlist" v-on:click="downloadFile('showList')" v-bind:class="{ 'd-none': !showList }">download attendee list</a></p>
+          <p><a href="https://alatoo.casa/atps/exportlist" v-on:click="downloadFile('showList')" v-bind:class="{ 'd-none': !showList }">download attendee list</a></p>
           <p v-bind:class="{ 'd-none': showList }">Loading</p>
-          <p><a href="https://litrev.org/atps/export.pdf"  v-on:click="downloadFile('showPdfs')" v-bind:class="{ 'd-none': !showPdfs }">download all abstracts</a>
+          <p><a href="https://alatoo.casa/atps/export.pdf"  v-on:click="downloadFile('showPdfs')" v-bind:class="{ 'd-none': !showPdfs }">download all abstracts</a>
           <p v-bind:class="{ 'd-none': showPdfs }">Loading</p>
         </div>
         
