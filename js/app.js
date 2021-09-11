@@ -1,3 +1,5 @@
+const baseUrl = "https://alatoo.casa"
+
 const registration = new Vue({
   el: '#vue-register',
 
@@ -36,7 +38,7 @@ const registration = new Vue({
         if (this.file) formdata.append('file', this.file);
         message.notify('Processing', 'warning');
         let res = await axios({
-          url: 'https://litrev.org/atps/items',
+          url: `${baseUrl}/atps/items`,
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
@@ -97,7 +99,7 @@ const admin = new Vue({
     async login() {
       let res = await axios({
         method: 'post',
-        url: 'https://litrev.org/atps/signin',
+        url: `${baseUrl}/atps/signin`,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -127,7 +129,7 @@ const admin = new Vue({
     async markPayment(itemId) {
       let res = await axios({
         method: 'put',
-        url: 'https://litrev.org/atps/items',
+        url: `${baseUrl}/atps/items`,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -140,7 +142,7 @@ const admin = new Vue({
     async deleteItem(itemid) {
       let res = await axios({
         method: 'delete',
-        url: 'https://litrev.org/atps/items/' + itemid,
+        url: `${baseUrl}/atps/items/` + itemid,
         headers: {
           'Content-Type': 'application/json',
         },
