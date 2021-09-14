@@ -29,7 +29,7 @@
           </div>
         </div>
       </header>
-      <div class="page shadow-lg bg-transparent pb-5 d-flex justify-content-center" id="vue-register">
+      <div class="page shadow-lg bg-white pb-5 d-flex justify-content-center" id="vue-register">
         <div class="p-5 w-75">
           <h2>Register</h2>
           <form method="POST" action="">
@@ -45,16 +45,18 @@
                 </div>
               </div>
               
-              <div class="">
+              <div class="d-flex justify-content-center">
                 <div class="form-group p-2">
                   <label>Email address:</label>
                   <input type="text" name="email" class="form-control" v-model="email">
                 </div>
                 <div class="form-group p-2">
                   <label>Affiliation</label>
-                  <textarea class="form-control w-100" name="affiliation" v-model="affil"></textarea>
+		  <input type="text" name="lastName" class="form-control" v-model="affil">
                 </div>
-                <div class="form-group text-left w-50 pl-5">
+              </div>
+	      <div>
+		<div class="form-group text-left w-50 pl-5">
                   <div class="form-group">
                     <input type="checkbox" name="isStudent" class="form-check-input" v-model="student"> Student
                   </div>
@@ -64,17 +66,33 @@
                   <div class="form-group">
                     <input type="checkbox" name="willPart" class="form-check-input" v-model="party"> Participate in Social Evening
                   </div>
-                  
                 </div>
-                
-                
-              </div>
+	      </div>
               <div class="ml-3">
-                <div class="form-group text-left">
+                <div class="form-group text-center">
                   <div class="pr-2">
-                    <label>Abstract:</label>
+		    <h3>Abstract</h3>
                   </div>
-                  <input type="file" id="file" ref="file" name="lastName" class="form-control-file" v-on:change="handleFileUpload()">
+                  <div class="form-group">
+                    <label>Title</label>
+		    <input type="text" name="abstractTitle" class="form-control" v-model="absTitle">
+                  </div>
+		  <div class="form-group">
+                    <label>Authors</label>
+		    <input type="text" name="abstractAuthors" class="form-control" v-model="absAuthors">
+                  </div>
+		  <div class="form-group">
+                    <label>Affiliations</label>
+		    <input type="text" name="abstractAffils" class="form-control" v-model="absAffils">
+                  </div>
+		  <div class="form-group">
+                    <label>Body</label>
+		    <textarea style="height:300px" class="form-control w-100" name="abstractBody" v-model="absBody"></textarea>
+		  </div>
+		  <div class="form-group">
+                    <label>References</label>
+		    <textarea style="height:200px" class="form-control w-100" name="abstractRefs" v-model="absRefs"></textarea>
+		  </div>
                 </div>
               </div>
             </fieldset>

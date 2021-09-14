@@ -13,6 +13,11 @@ const registration = new Vue({
     file: '',
     presents: '',
     email: '',
+    absTitle: '',
+    absAuthors: '',
+    absAffils: '',
+    absBody: '',
+    absRefs: ''
   },
 
   methods: {
@@ -28,14 +33,19 @@ const registration = new Vue({
         formdata.set('party', this.party);
         formdata.set('presents', this.presents);
         formdata.set('email', this.email);
+	formdata.set('absTitle', this.absTitle);
+	formdata.set('absAuthors', this.absAuthors);
+	formdata.set('absAffils', this.absAffils);
+	formdata.set('absBody', this.absBody);
+	formdata.set('absRefs', this.absRefs);
         
-        try {
-          this.file = this.$refs.file.files[0];
-        } catch (e) {
-          console.log(e);
-        }
-        
-        if (this.file) formdata.append('file', this.file);
+        /* try {
+	 *   this.file = this.$refs.file.files[0];
+	 * } catch (e) {
+	 *   console.log(e);
+	 * }
+	 * 
+	 * if (this.file) formdata.append('file', this.file); */
         message.notify('Processing', 'warning');
         let res = await axios({
           url: `${baseUrl}/atps/items`,
