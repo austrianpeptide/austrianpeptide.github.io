@@ -87,7 +87,14 @@
                   </div>
 		  <div class="form-group">
                     <label>Body</label>
-		    <textarea style="height:300px" class="form-control w-100" name="abstractBody" v-model="absBody"></textarea>
+		    <textarea
+		      style="height:300px"
+		      class="form-control w-100"
+		      name="abstractBody"
+		      v-model="absBody"
+		      maxlength="2000"
+		      placeholder="2000 characters maximum"
+		    ></textarea>
 		  </div>
 		  <div class="form-group">
                     <label>References</label>
