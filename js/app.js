@@ -10,6 +10,8 @@ const registration = new Vue({
     student: false,
     member: false,
     party: false,
+    poster: false,
+    oral: false,
     file: '',
     presents: '',
     email: '',
@@ -31,6 +33,8 @@ const registration = new Vue({
         formdata.set('student', this.student);
         formdata.set('member', this.member);
         formdata.set('party', this.party);
+	formdata.set('poster', this.poster);
+	formdata.set('oral', this.oral);
         formdata.set('presents', this.presents);
         formdata.set('email', this.email);
 	formdata.set('absTitle', this.absTitle);
