@@ -84,16 +84,16 @@
 		    <h3>Abstract</h3>
                   </div>
                   <div class="form-group">
-                    <label>Title</label>
-		    <input type="text" name="abstractTitle" class="form-control" v-model="absTitle">
+                    <label>Title (100 characters max)</label>
+		    <input type="text" name="abstractTitle" class="form-control" maxlength="100" v-model="absTitle">
                   </div>
 		  <div class="form-group">
-                    <label>Authors</label>
-		    <input type="text" name="abstractAuthors" class="form-control" v-model="absAuthors">
+                    <label>Authors (300 characters max)</label>
+		    <input type="text" name="abstractAuthors" class="form-control" maxlength="300" v-model="absAuthors">
                   </div>
 		  <div class="form-group">
-                    <label>Affiliations</label>
-		    <input type="text" name="abstractAffils" class="form-control" v-model="absAffils">
+                    <label>Affiliations (coma separated)</label>
+		    <input type="text" name="abstractAffils" class="form-control" maxlength="500" v-model="absAffils">
                   </div>
 		  <div class="form-group">
                     <label>Body</label>
@@ -107,8 +107,8 @@
 		    ></textarea>
 		  </div>
 		  <div class="form-group">
-                    <label>References</label>
-		    <textarea style="height:200px" class="form-control w-100" name="abstractRefs" v-model="absRefs"></textarea>
+                    <label>References (optional, 1000 characters max, <a href="https://onlinelibrary.wiley.com/page/journal/15213773/homepage/notice-to-authors">ACIE style</a>)</label>
+		    <textarea style="height:200px" class="form-control w-100" name="abstractRefs" maxlength="1000" v-model="absRefs"></textarea>
 		  </div>
                 </div>
               </div>
