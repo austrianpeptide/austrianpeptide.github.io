@@ -70,48 +70,8 @@
                   <div class="form-group">
                     <input type="checkbox" name="willPart" class="form-check-input" v-model="party"> Participate in Social Evening
                   </div>
-		  <div class="form-group">
-                    <input type="checkbox" name="poster" class="form-check-input" v-model="poster"> Poster presentation
-                  </div>
-		  <div class="form-group">
-                    <input type="checkbox" name="oral" class="form-check-input" v-model="oral"> Oral presentation
-                  </div>
                 </div>
 	      </div>
-              <div class="ml-3">
-                <div class="form-group text-center">
-                  <div class="pr-2">
-		    <h3>Abstract</h3>
-                  </div>
-                  <div class="form-group">
-                    <label>Title (100 characters max)</label>
-		    <input type="text" name="abstractTitle" class="form-control" maxlength="100" v-model="absTitle">
-                  </div>
-		  <div class="form-group">
-                    <label>Authors (300 characters max)</label>
-		    <input type="text" name="abstractAuthors" class="form-control" maxlength="300" v-model="absAuthors">
-                  </div>
-		  <div class="form-group">
-                    <label>Affiliations (coma separated)</label>
-		    <input type="text" name="abstractAffils" class="form-control" maxlength="500" v-model="absAffils">
-                  </div>
-		  <div class="form-group">
-                    <label>Body</label>
-		    <textarea
-		      style="height:300px"
-		      class="form-control w-100"
-		      name="abstractBody"
-		      v-model="absBody"
-		      maxlength="2000"
-		      placeholder="2000 characters maximum"
-		    ></textarea>
-		  </div>
-		  <div class="form-group">
-                    <label>References (optional, 1000 characters max, <a href="https://onlinelibrary.wiley.com/page/journal/15213773/homepage/notice-to-authors">ACIE style</a>)</label>
-		    <textarea style="height:200px" class="form-control w-100" name="abstractRefs" maxlength="1000" v-model="absRefs"></textarea>
-		  </div>
-                </div>
-              </div>
             </fieldset>
             <button class="btn" @click.prevent="sendData">Submit</button>
           </form>
