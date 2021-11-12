@@ -97,13 +97,22 @@ body {
     width: 15em;
 }
 
+.sponsor-pic-small {
+  margin: 0 auto;
+  height: 3em;
+}
+
 .sponsor-pic img {
-    width: 100%;
+  width: 100%;
+}
+
+.sponsor-pic-small img {
+  height: 100%;
 }
 
 .profile-pic img{
-    width: 10em;
-    margin: auto;
+  width: 10em;
+  margin: auto;
 }
 
 .main .btn-lg {
