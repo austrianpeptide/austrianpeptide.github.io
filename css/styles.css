@@ -13,6 +13,10 @@ body {
     scroll-behavior:smooth;
 }
 
+br {
+  margin: 0.5rem
+}
+
 body {
   display: -ms-flexbox;
   /* display: flex; */
